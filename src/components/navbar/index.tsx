@@ -1,8 +1,8 @@
-import { FilePlus, FolderPlus, Plus } from "@phosphor-icons/react";
+import { FilePlus, FolderPlus, House, Plus } from "@phosphor-icons/react";
 import { API } from "../../services/api";
 import { useEffect, useState } from "react";
 import { PropagateLoader } from "react-spinners";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   interface categoriasInteface {
@@ -17,7 +17,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className="shadow-lg sticky top-0">
+    <header className="shadow-lg sticky top-0 z-20 bg-white">
       <div className="bg-[#c5221b]">
         <div className="container  text-center text-white py-1">
           O produto que você precisa, esta aqui!
@@ -25,23 +25,29 @@ export default function Navbar() {
       </div>
       <div className="border-b border-[#dadada]">
         <div className="container flex items-center py-3 justify-between flex-wrap">
-          <div className="w-2/4">
-            <div className="bg-[#c5221b] rounded-full  flex items-center gap-1 pl-2 w-fit">
-              <Plus color="white" size={42} weight="bold" />
-              <span className="bg-white py-2 px-4 rounded-full border-[#c5221b] border-r-2 border-b-2 font-bold text-2xl text-[#173E70] italic">Drogão</span>
+          <div className="bg-[#c5221b] rounded-full  flex items-center gap-1 pl-2 w-fit">
+            <Plus color="white" size={42} weight="bold" />
+            <span className="bg-white py-2 px-4 rounded-full border-[#c5221b] border-r-2 border-b-2 font-bold text-2xl text-[#173E70] italic">Drogão</span>
+          </div>
+          <div className="flex gap-4">
+            <div className=" flex items-center text-[#7a7a7a] font-medium cursor-pointer">
+              <Link to="/" className="flex items-center gap-1">
+                <House size={32} color="#7a7a7a" />
+                inicio
+              </Link>
             </div>
-          </div>
-          <div className=" flex items-center text-[#7a7a7a] font-medium gap-2 cursor-pointer">
-            {/* <Link to="/adicionarcategoria"> */}
-            <FolderPlus size={32} color="#7a7a7a" />
-            Adcicionar categoria
-            {/* </Link> */}
-          </div>
-          <div className="flex items-center text-[#7a7a7a] font-medium gap-2 cursor-pointer">
-            {/* <Link to="/adicionarproduto"> */}
-              <FilePlus size={32} color="#7a7a7a" />
-              Adicionar Produto
-            {/* </Link> */}
+            <div className=" flex items-center text-[#7a7a7a] font-medium cursor-pointer">
+              <Link to="/categoria" className="flex items-center gap-1">
+                <FolderPlus size={32} color="#7a7a7a" />
+                Categoria
+              </Link>
+            </div>
+            <div className="flex items-center text-[#7a7a7a] font-medium gap-2 cursor-pointer">
+              <Link to="/produto" className="flex items-center gap-1">
+                <FilePlus size={32} color="#7a7a7a" />
+                Produto
+              </Link>
+            </div>
           </div>
         </div>
       </div>
