@@ -40,7 +40,6 @@ export default function DelCategoria() {
             await API.delete(`/categorias/${formData.id}`)
 
             alert("Categoria excluida com sucesso!")
-            window.location.reload();
         } catch (error) {
             console.error(error)
         }

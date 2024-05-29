@@ -33,7 +33,7 @@ export default function ModCategoria() {
         try {
             await API.put('/categorias', formData)
 
-            navigate('/')
+            alert("Categoria modificado com sucesso!")
         } catch (error) {
             console.error(error)
         }

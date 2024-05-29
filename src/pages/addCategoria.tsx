@@ -27,7 +27,6 @@ export default function AddCategoria() {
             await API.post('/categorias', formData)
 
             alert("Adicionado com sucesso!")
-            window.location.reload();
         } catch (error) {
             console.error(error)
         }

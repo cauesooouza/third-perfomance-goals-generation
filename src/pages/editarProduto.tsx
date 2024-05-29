@@ -59,7 +59,7 @@ export default function EditarProduto() {
         try {
             await API.put('/produtos', formData)
 
-            window.location.reload()
+            alert("Produto editado com sucesso!")
         } catch (error) {
             console.error(error)
         }
