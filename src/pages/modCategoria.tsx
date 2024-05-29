@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { API } from "../services/api";
 import { categoriaInterface } from "../models/categoria";
-import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 export default function ModCategoria() {
@@ -10,7 +9,6 @@ export default function ModCategoria() {
         nome: "string",
         produto: ["string"]
     })
-    const navigate = useNavigate();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
